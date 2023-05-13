@@ -1,0 +1,28 @@
+.card {
+  margin-bottom: 20px;
+}
+
+.card-img {
+  width: 100%;
+}
+
+body {
+  background: #0f0c29;
+  background: linear-gradient(to right, #24243e, #000, #0f0c29);
+}
+body img {
+  opacity: 0.9;
+}
+
+nav {
+  background: #9f9bbc;
+  background: linear-gradient(to right, #0c5460, #302b63, #1e1949);
+}
+
+img {
+  opacity: 1;
+}
+
+h1 {
+  color: white;
+}/*# sourceMappingURL=styles.css.map */
