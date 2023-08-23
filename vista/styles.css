@@ -3,7 +3,15 @@
 }
 
 .card-img {
-  width: 100%;
+  width: 80%;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.card-price {
+  font-weight: 900;
 }
 
 body {
