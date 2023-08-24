@@ -60,7 +60,47 @@ function renderMovies(phones) {
     cardBody.appendChild(btn);
     card.appendChild(cardBody);
     phoneList.appendChild(card);
-  });
+
+
+    const maxStars = 5; // Cantidad máxima de estrellas
+    const selectedRatings = {}
+
+    for (let i = maxStars; i >= 1; i--) {
+      const starLabel = document.createElement('label');
+      starLabel.htmlFor = `star${i}${movie.title}`;
+      starLabel.innerText = '\u2605'; // Icono de estrella (☆)
+
+      // Aplicar estilos a las estrellas
+      starLabel.style.display = 'inline-block';
+      starLabel.style.position = 'relative';
+      starLabel.style.width = '1.1em';
+      starLabel.style.fontSize = '24px';
+      starLabel.style.color = '#ccc';
+      starLabel.style.cursor = 'pointer';
+      starLabel.style.marginRight = '5px';
+
+      starLabel.addEventListener('mouseover', () => {
+          updateStarColors(movie.title, i);
+      });
+
+      starLabel.addEventListener('mouseout', () => {
+          updateStarColors(movie.title, selectedRatings[movie.title] || 0);
+      });
+
+      starLabel.addEventListener('click', () => {
+          selectedRatings[movie.title] = i;
+          console.log(`${movie.title}: Calificación seleccionada: ${selectedRatings[movie.title]}`);
+          updateStarColors(movie.title, selectedRatings[movie.title]);
+      });
+
+      cardBody.appendChild(starLabel);
+      
+    
+       
+    }
+    
+  
+});
 
   phones.forEach((phone) => {
     let btnCargarInfo = document.querySelector(`#${phone.id}`);
@@ -100,3 +140,14 @@ filterSelect.addEventListener("change", () => {
   console.log(sortedPhones)
   renderMovies(sortedPhones);
 });
+
+function updateStarColors(title, rating) {
+  for (let j = 1; j <= 5; j++) {
+      const currentStarLabel = document.querySelector(`label[for='star${j}${title}']`);
+      if (j <= rating) {
+          currentStarLabel.style.color = '#FFD700';
+      } else {
+          currentStarLabel.style.color = '#ccc';
+      }
+  }
+}
