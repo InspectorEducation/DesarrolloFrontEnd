@@ -51,13 +51,35 @@ function renderMovies(phones) {
     btn.textContent = "Mas info";
     btn.id = movie.id;
 
+    const calificarlabel = document.createElement("calificarlabel");
+    calificarlabel.classList.add("card-text");
+    calificarlabel.textContent = `Agrega aqui tu calificación`;
+
+    const textarea = document.createElement("textarea");
+    textarea.classList.add("card-textarea");
+    textarea.style.width = "420px";
+    textarea.style.height = "90px";
+    textarea.placeholder = "Y escribe tu reseña ";
+ 
+ 
+    const publicar = document.createElement("button");
+    publicar.classList.add("btn");
+    publicar.classList.add("btn-primary"); // Cambia la clase a "btn-primary" para obtener un estilo similar a "Publicar"
+    publicar.textContent = "Publicar"; 
+    
+    publicar.addEventListener('click', () => {
+      alert("Comentario creado"); // Mostrar un mensaje cuando se haga clic en el botón
+    });
+
     cardBody.appendChild(title);
     cardBody.appendChild(pricePhone);
     pricePhone.appendChild(price);
     cardBody.appendChild(rating);
+    cardBody.appendChild(btn);
     cardBody.appendChild(img);
     cardBody.appendChild(linebreak);
-    cardBody.appendChild(btn);
+    cardBody.appendChild(calificarlabel);
+    cardBody.appendChild(linebreak);
     card.appendChild(cardBody);
     phoneList.appendChild(card);
 
@@ -93,9 +115,12 @@ function renderMovies(phones) {
           updateStarColors(movie.title, selectedRatings[movie.title]);
       });
 
+      cardBody.appendChild(linebreak);
       cardBody.appendChild(starLabel);
-      
-    
+      cardBody.appendChild(linebreak);
+      cardBody.appendChild(textarea);
+      cardBody.appendChild(linebreak);
+      cardBody.appendChild(publicar);
        
     }
     
@@ -151,3 +176,4 @@ function updateStarColors(title, rating) {
       }
   }
 }
+
