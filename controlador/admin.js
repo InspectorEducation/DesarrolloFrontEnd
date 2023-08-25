@@ -6,8 +6,10 @@ document.getElementById("computerForm").addEventListener("submit", function (e) 
     // Agrega aquí las líneas para obtener los demás valores del formulario
     
     // Enviar los datos al backend para insertar en la base de datos (debes implementar esto)
-    // Puedes usar fetch() o AJAX para hacer la petición al servidor
-    
+    //  fetch() 
+    fetch('http://localhost:8080/api/products/crearCelulares', {
+    method: 'POST',
+    })
     // Limpiar el formulario después de enviar
     document.getElementById("codigo").value = "";
     // Agrega aquí las líneas para limpiar los demás campos del formulario
