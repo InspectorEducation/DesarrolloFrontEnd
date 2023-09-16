@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión - Tienda</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="../modelo/login.js" type="module"></script>
+    <style>     
+         body {            
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+                
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-form" id="login-form">
+            <h2>Iniciar Sesión</h2>
+            <form action="../vista/index.html" method="post" class="login">
+                <input type="text" name="username" id="username" placeholder="Usuario" required>
+                <input type="password" name="password" id="password" placeholder="Contraseña" required>
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+            <button id="show-register-form">Registrarse</button>
+        </div>
+        <div class="register-form" id="register-form">
+            <h2>Registro</h2>
+            <form action="#" method="post">
+                <input type="text" name="nombre" placeholder="Nombre" required>
+                <input type="email" name="correo" placeholder="Correo Electrónico" required>
+                <input type="password" name="contrasena" placeholder="Contraseña" required>
+                <button type="submit">Registrarse</button>
+            </form>
+        </div>
+    </div>    
+</body>
+</html>
