@@ -175,31 +175,4 @@ function updateStarColors(title, rating) {
   }
 }
 
-//Autenticacion
 
-class Auth {
-  
- constructor() {
-     document.querySelector("body").style.display = "none";
-     const auth = localStorage.getItem("auth");
-     console.log(auth);
-     this.validateAuth(auth);
- }
- 
- validateAuth(auth) {
-     if (auth == "") {
-         window.location.replace("../vista/login.html");
-         console.log("la validacion del token fue incorrecta");
-     } else {
-         document.querySelector("body").style.display = "block";
-         console.log("la validacion del token fue correcta");
-     }
- }
- 
- logOut() {
-     localStorage.removeItem("auth");
-     window.location.replace("../vista/index.html");
- }
-}
-
-const auth = new Auth();
